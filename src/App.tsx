@@ -52,7 +52,7 @@ export function App() {
       setUser(userName);
       localStorage.setItem('raizes_user', userName);
       setShowWelcome(true);
-      setTimeout(() => setShowWelcome(false), 2000);
+      setTimeout(() => setShowWelcome(false), 2500);
     }
   };
 
@@ -140,7 +140,7 @@ export function App() {
 
             <div className="mt-6 pt-6 border-t border-green-100">
               <p className="text-center text-green-600 text-sm italic">
-                {bibleVerses[1 + Math.floor(Math.random() * (bibleVerses.length - 1))]}
+                {bibleVerses[Math.floor(Math.random() * bibleVerses.length)]}
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export function App() {
       <div className="min-h-screen bg-linear-to-br from-green-600 to-green-800 flex items-center justify-center p-4">
         <div className="text-center animate-growIn">
           <div className="inline-block p-6 bg-white rounded-full shadow-2xl mb-6 animate-pulse-slow">
-            <Book className="w-20 h-20 text-green-700" />
+            <User className="w-12 h-12 text-green-700" />
           </div>
           <h2 className="text-4xl font-bold text-white mb-2">Bem-vindo, {user}!</h2>
           <p className="text-green-100 text-lg">Prepare-se para mergulhar na Palavra</p>
@@ -185,7 +185,8 @@ export function App() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
-                <Book className="w-6 h-6 text-green-700" />
+                {/* <User className="w-6 h-6 text-green-700" /> */}
+                <img className='w-10 h-10 rounded-full' src={Logo} alt="Logo Raízes" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold">Olá, {user}!</h1>
@@ -220,7 +221,7 @@ export function App() {
           <div className="flex items-start gap-3">
             <Book className="w-6 h-6 text-amber-700 mt-1 shrink-0" />
             <p className="text-amber-900 italic leading-relaxed">
-              {bibleVerses[1 + Math.floor(Math.random() * (bibleVerses.length - 1))]}
+              {bibleVerses[Math.floor(Math.random() * bibleVerses.length)]}
             </p>
           </div>
         </div>
